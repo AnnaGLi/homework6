@@ -1,0 +1,50 @@
+//Разработать программу, имитирующую поведение коллекции HashSet. В программе содать метод add добавляющий элемент,
+// метод toString возвращающий строку с элементами множества
+// Формат данных Integer.
+
+package org.example;
+
+import java.util.HashMap;
+import java.util.Iterator;
+
+public class Main {
+    public void main(String[] args) {
+
+        Set set1 = new Set();
+        System.out.println(set1.add(555));
+        System.out.println(set1.add(12));
+        System.out.println(set1.add(1540));
+        System.out.println(set1.remove(12));
+        System.out.println(set1.size());
+        System.out.println(set1.isEmpty());
+        Iterator<Integer> it = set1.iterator();
+        System.out.println(set1.toString());
+    }
+
+    class Set<E> {
+        private HashMap<Integer, Object> set = new HashMap<>();
+        private static final Object VALL = new Object();
+
+        public boolean add(Integer tel) {
+            return set.put(tel, VALL) == null;
+        }
+
+        public boolean remove(E tel) {
+            return set.remove(tel) == VALL;
+        }
+        public int size(){
+            return size();
+        }
+        public boolean isEmpty(){
+            return set.isEmpty();
+
+        }
+        public Iterator<Integer> iterator(){
+            return set.keySet().iterator();
+        }
+        public String toString(){
+            return set.toString();
+        }
+    }
+}
+
